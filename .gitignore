@@ -1,3 +1,3 @@
 .env
 flask-app/venv/
-postgres-db/
+postgres-db/*
