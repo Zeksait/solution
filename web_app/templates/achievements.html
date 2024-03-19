@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Информация о всех достижениях{% endblock %}
+
+{% block description %}Информация о всех достижениях{% endblock %}
+
+{% block content %}
+    <a href="{{ url_for('route.add_achievement') }}">Добавить</a><br>
+<div class="container">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>Очки</th>
+            <th>Описание</th>
+        </tr>
+        {% for achievement in achievements%}
+            <tr>
+                <td><a href="{{ url_for('route.get_achievement', achievement_id=achievement.id) }}">{{ achievement.id }}</a></td>
+                <td>{{ achievement.name }}</td>
+                <td>{{ achievement.points }}</td>
+                <td>{{ achievement.description }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

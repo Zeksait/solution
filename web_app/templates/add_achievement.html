@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Добавить достижение{% endblock %}
+
+{% block description %}Добавить достижение{% endblock %}
+
+{% block content %}
+<div class="container">
+<form action="{{ url_for('route.add_achievement')}}" method="post"> 
+    <label for="name" class="form-label">Название</label> 
+    <input name="name" class="form-control" id="name"> 
+    <br>
+    <label for="points" class="form-label">Очки</label> 
+    <input name="points" class="form-control" id="points"> 
+    <br>
+    <label for="description" class="form-label">Описание</label> 
+    <input name="description" class="form-control" id="description"> 
+    <br>    
+    <button type="submit" class="btn btn-primary">Отправить</button> 
+</form>
+</div>
+{% endblock %}

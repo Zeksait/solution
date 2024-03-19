@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Информация о всех достижениях{% endblock %}
+
+{% block description %}Информация о достижении{% endblock %}
+
+{% block content %}
+    <a href="{{ url_for('route.award_user', achievement_id=achievement.id) }}">Наградить пользователя</a>
+    <br>
+    <br>
+    <ul>
+        <li>ID: {{ achievement.id }}</li>
+        <li>Название: {{ achievement.name }}</li>
+        <li>Очки: {{ achievement.points }}</li>
+        <li>Описание: {{ achievement.description }}</li>
+    </ul>
+{% endblock %}
