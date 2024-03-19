@@ -6,7 +6,7 @@ networks:
     external: false
 
 services:
-
+# создать папку postgres-db
   postgres-db:
     image: postgres:16.1
     container_name: postgres_database
