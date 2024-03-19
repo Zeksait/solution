@@ -12,25 +12,20 @@ services:
     container_name: postgres_database
     restart: always
     environment:
-      POSTGRES_PASSWORD: ${POSTGRES_DB_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB_NAME}
-      POSTGRES_USER: ${POSTGRES_DB_USER}
-      POSTGRES_INITDB_ARGS: "-A md5"
-      USER_UID: 1000
-      USER_GID: 1000
-    ports:
-      - "54321:5432"
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: db_name
+      POSTGRES_USER: db_user
     volumes:
       - ./postgres-db:/var/lib/postgresql/data
     networks:
       - db_network
 
   flask:
-    container_name: flask_app
-    build: ./flask-app
-    command: python app.py run
+    container_name: web
+    build: ./web_app
+    command: python manage.py run -h 0.0.0.0
     volumes:
-      - ./flask-app/:/usr/src/app/
+      - ./web_app/:/usr/src/app/
     ports:
       - 5000:5000
     env_file:

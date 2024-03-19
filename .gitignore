@@ -1,3 +1,5 @@
 .env
-flask-app/venv/
-postgres-db/*
+/web_app/venv/*
+/postgres-db
+.idea/*
+/__pycache__
