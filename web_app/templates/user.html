@@ -1,11 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Информация о пользователе</title>
-</head>
-<body>
-    <h2>Информация о пользователе</h2>
+{% extends "base.html" %}
+
+{% block title %}Информация о пользователе{% endblock %}
+
+{% block description %}Информация о пользователе{% endblock %}
+
+{% block content %}
+
+<div class="container">
     <h3>{{ user }}</h3>
-</body>
-</html>
+
+    <table class="table">
+
+        <tr>
+            <th>ID</td>
+            <th>Достижение</td>
+            <th>Дата награждения</td>
+        </tr>
+
+        {% for achievement in achievements %}
+            <tr>
+                <td>{{ achievement.id }}</td>
+                <td>{{ achievement.achievement }}</td>
+                <td>{{ achievement.d_create }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+{% endblock %}

@@ -10,7 +10,8 @@
 
     <h3>Меню</h3>
     <a href="{{ url_for('route.index') }}">Главная</a><br>
-    <a href="{{ url_for('route.get_all_achievements') }}">Достижения</a><br>
+    <a href="{{ url_for('route.get_users') }}">Пользователи</a><br>
+    <a href="{{ url_for('route.get_achievements') }}">Достижения</a><br>
 
     <br>
     {% block content %}CONTENT{% endblock %}

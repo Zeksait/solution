@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Информация о всех пользователях{% endblock %}
+
+{% block description %}Информация о всех пользователях{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>язык</th>
+            </tr>
+            {% for user in users%}
+                <tr>
+                    <td><a href="{{ url_for('route.get_user', user_id=user.id) }}">{{ user.id }}</a></td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.lang }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

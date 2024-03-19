@@ -37,5 +37,8 @@ class UserAchievement(db.Model):
     achievement_id = db.Column(db.Integer, db.ForeignKey('achievements.id'))
     d_create = db.Column(db.DateTime, nullable=False, default=datetime.now)
 
+    achievement = db.relationship('Achievement')
+    user = db.relationship('User')
+
     def __repr__(self):
         return f"{self.id} ({self.d_create})"
