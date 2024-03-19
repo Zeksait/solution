@@ -1,7 +1,8 @@
 # solution
 Реализация тестового задания для Элвис
 
-1) в файле env заменить параметры своими
+1) перейти в папку: cd solution
+1) в файле env заменить параметры своими: nano env
 2) переименовать env в .env: mv env .env
 3) создать папку postgres-db: mkdir postgres-db
 4) сбилдить контейнеры и запустить: docker compose build && docker compose up -d
