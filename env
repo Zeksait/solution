@@ -1,5 +1,5 @@
 FLASK_APP=web_app/app/__init__.py
 FLASK_DEBUG=1
 SECRET_KEY=1234
-
+DATABASE=postgres
 SQLALCHEMY_DATABASE_URI=postgresql://db_user:12345@postgres-db:5432/db_name
