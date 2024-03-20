@@ -40,10 +40,12 @@
     ```sh
     docker compose exec flask python manage.py shell
     ```
+
 Посмотреть логи фласк в реальном времени:
     ```sh
     docker compose logs -f flask
     ```
+    
 Опустить контейнеры:
     ```sh
     docker compose down
